@@ -25,6 +25,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
 }
 
 body {
@@ -140,31 +141,38 @@ a {
 .hero-logo {
     display: grid;
     place-items: center;
-
-    color: white;
-
-    background:
-        radial-gradient(circle at 35% 24%,
-            rgba(255, 255, 255, 0.36),
-            transparent 18%),
-        linear-gradient(145deg,
-            #4cebd9,
-            #168f9d 47%,
-            #244a9f);
-
-    box-shadow:
-        inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-        0 0 34px rgba(67, 234, 216, 0.24);
 }
 
 .brand-logo {
-    width: 46px;
-    height: 46px;
+    width: 58px;
+    height: 42px;
 
-    border-radius: 14px;
+    flex: 0 0 auto;
 
-    font-size: 1.5rem;
-    font-weight: 950;
+    overflow: hidden;
+
+    border: 1px solid rgba(111, 239, 226, 0.24);
+    border-radius: 15px;
+
+    background: #d5f1fa;
+
+    box-shadow:
+        0 0 0 1px rgba(5, 19, 23, 0.34),
+        0 8px 22px rgba(0, 0, 0, 0.32),
+        0 0 18px rgba(67, 234, 216, 0.16);
+}
+
+.brand-logo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center top;
+
+    transform: scale(1.2);
+    transform-origin: center top;
 }
 
 .brand-name {
@@ -367,33 +375,57 @@ a {
 }
 
 .hero-logo {
-    width: 172px;
-    height: 172px;
+    position: relative;
+    isolation: isolate;
+
+    width: min(350px, 78vw);
+    aspect-ratio: 610 / 586;
 
     margin: 0 auto 30px;
 
+    padding: 10px;
+
+    border: 1px solid rgba(111, 239, 226, 0.24);
     border-radius: 42px;
 
-    font-size: 6rem;
-    font-weight: 950;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(231, 250, 255, 0.98),
+            rgba(198, 235, 246, 0.98)
+        );
 
-    animation:
-        logo-glow 4s ease-in-out infinite alternate,
-        fade-up 0.85s ease both;
+    box-shadow:
+        0 28px 80px rgba(0, 0, 0, 0.42),
+        0 0 0 1px rgba(5, 19, 23, 0.44),
+        0 0 44px rgba(67, 234, 216, 0.18);
+
+    animation: fade-up 0.85s ease both;
 }
 
-@keyframes logo-glow {
-    from {
-        box-shadow:
-            inset 0 0 0 1px rgba(255, 255, 255, 0.1),
-            0 0 22px rgba(67, 234, 216, 0.2);
-    }
+.hero-logo::before {
+    content: "";
 
-    to {
-        box-shadow:
-            inset 0 0 0 1px rgba(255, 255, 255, 0.12),
-            0 0 60px rgba(67, 234, 216, 0.43);
-    }
+    position: absolute;
+    inset: 10%;
+    z-index: -1;
+
+    border-radius: 50%;
+
+    background: rgba(67, 234, 216, 0.2);
+
+    filter: blur(34px);
+}
+
+.hero-logo img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: contain;
+
+    border-radius: 32px;
 }
 
 @keyframes fade-up {
@@ -708,29 +740,32 @@ a {
 }
 
 .orbit-inner {
-    width: 62%;
+    width: 70%;
     aspect-ratio: 1;
 
     border-color: rgba(67, 234, 216, 0.36);
 }
 
-.orbit-inner span {
-    color: transparent;
+.orbit-inner img {
+    width: 88%;
+    height: 88%;
 
-    font-size: clamp(5rem, 12vw, 8rem);
-    font-weight: 950;
+    display: block;
 
-    background: linear-gradient(145deg,
-            white,
-            #70f4e4,
-            #7898ff);
+    object-fit: contain;
 
-    background-clip: text;
-    -webkit-background-clip: text;
+    overflow: hidden;
 
-    filter: drop-shadow(0 0 24px rgba(67, 234, 216, 0.3));
+    border: 1px solid rgba(111, 239, 226, 0.2);
+    border-radius: 22px;
+
+    background: #d5f1fa;
 
     animation: orbit-counter-spin 18s linear infinite;
+
+    box-shadow:
+        0 14px 32px rgba(0, 0, 0, 0.38),
+        0 0 24px rgba(67, 234, 216, 0.16);
 }
 
 @keyframes orbit-spin {
@@ -889,12 +924,7 @@ footer {
     }
 
     .hero-logo {
-        width: 138px;
-        height: 138px;
-
-        border-radius: 34px;
-
-        font-size: 4.8rem;
+        width: min(290px, 82vw);
     }
 
     .services-grid {
