@@ -842,6 +842,48 @@ a {
     box-shadow: var(--shadow);
 }
 
+.shop-panel {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+
+    border-color: rgba(112, 226, 235, 0.32);
+
+    background:
+        linear-gradient(115deg,
+            rgba(17, 77, 82, 0.88),
+            rgba(8, 34, 42, 0.96) 58%,
+            rgba(10, 29, 34, 0.98));
+}
+
+.shop-panel::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    opacity: 0.045;
+
+    background-image: url("assets/nexmar-logo.png");
+    background-repeat: repeat;
+    background-position: 28px 18px;
+    background-size: 190px auto;
+}
+
+.shop-panel::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+
+    background:
+        linear-gradient(90deg,
+            rgba(5, 25, 31, 0.12),
+            rgba(5, 25, 31, 0.72) 72%);
+}
+
 .contact-panel>div>p:last-child {
     max-width: 700px;
 
