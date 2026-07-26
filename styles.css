@@ -5,7 +5,7 @@
     --panel-strong: rgba(8, 25, 30, 0.94);
 
     --text: #f7ffff;
-    --muted: #a8bcc0;
+    --muted: #96b0b5;
 
     --teal: #43ead8;
     --teal-dark: #1bb9ad;
@@ -26,6 +26,12 @@
 html {
     scroll-behavior: smooth;
     overflow-x: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
 }
 
 body {
@@ -78,6 +84,23 @@ body::before {
 a {
     color: inherit;
     text-decoration: none;
+}
+
+/* Skip link for keyboard navigation */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--teal);
+    color: var(--background);
+    padding: 8px 16px;
+    z-index: 200;
+    border-radius: 0 0 4px 0;
+    font-weight: 700;
+}
+
+.skip-link:focus {
+    top: 0;
 }
 
 .container {
@@ -135,6 +158,12 @@ a {
 
     font-weight: 850;
     letter-spacing: 0.03em;
+}
+
+.brand:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 4px;
+    border-radius: 4px;
 }
 
 .brand-logo,
@@ -205,11 +234,19 @@ a {
     transition:
         color 0.2s ease,
         transform 0.2s ease;
+    border-radius: 4px;
+    padding: 4px 8px;
 }
 
 .nav-links a:hover {
     color: var(--teal);
     transform: translateY(-1px);
+}
+
+.nav-links a:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
+    color: var(--teal);
 }
 
 .button {
@@ -236,6 +273,11 @@ a {
 
 .button:hover {
     transform: translateY(-2px);
+}
+
+.button:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
 }
 
 .button-primary {
@@ -538,6 +580,13 @@ a {
     transform: translateX(-50%);
 
     animation: bounce 2s ease-in-out infinite;
+    border-radius: 4px;
+    padding: 4px 8px;
+}
+
+.scroll-indicator:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
 }
 
 @keyframes bounce {
@@ -652,6 +701,11 @@ a {
 
 .service-card:hover::after {
     opacity: 1;
+}
+
+.service-card:focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 2px;
 }
 
 .card-icon,
@@ -930,6 +984,28 @@ footer {
     transform: translateY(0);
 }
 
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .background-orb,
+    .floating-shape,
+    .orbit-outer,
+    .orbit-inner img,
+    .scroll-indicator {
+        animation: none !important;
+    }
+}
+
 @media (max-width: 980px) {
     .nav-links {
         display: none;
@@ -992,19 +1068,5 @@ footer {
         padding-inline: 14px;
 
         font-size: 0.88rem;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.001ms !important;
-        animation-iteration-count: 1 !important;
-
-        transition-duration: 0.001ms !important;
-
-        scroll-behavior: auto !important;
     }
 }

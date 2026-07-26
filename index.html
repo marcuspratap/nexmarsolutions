@@ -19,8 +19,10 @@
   </head>
 
   <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
     <header class="site-header" id="site-header">
-      <nav class="navbar container">
+      <nav class="navbar container" aria-label="Main navigation">
         <a class="brand" href="#home" aria-label="Nexmar Solutions home">
           <span class="brand-logo" aria-hidden="true">
             <img
@@ -37,36 +39,37 @@
           </span>
         </a>
 
-        <div class="nav-links">
-          <a href="#services">Services</a>
-          <a href="#about">Why Nexmar</a>
-          <a href="#shop">eBay Store</a>
-          <a href="#contact">Contact</a>
+        <div class="nav-links" role="menubar">
+          <a href="#services" role="menuitem">Services</a>
+          <a href="#about" role="menuitem">Why Nexmar</a>
+          <a href="#shop" role="menuitem">eBay Store</a>
+          <a href="#contact" role="menuitem">Contact</a>
         </div>
 
         <a
           class="button button-primary nav-button"
           href="mailto:support@nexmarsolutions.com"
+          aria-label="Send email to support@nexmarsolutions.com"
         >
           Let's Talk
         </a>
       </nav>
     </header>
 
-    <main>
-      <section class="hero" id="home">
-        <div class="background-orb orb-one"></div>
-        <div class="background-orb orb-two"></div>
+    <main id="main-content">
+      <section class="hero" id="home" aria-label="Hero section">
+        <div class="background-orb orb-one" aria-hidden="true"></div>
+        <div class="background-orb orb-two" aria-hidden="true"></div>
 
-        <div class="floating-shape shape-one"></div>
-        <div class="floating-shape shape-two"></div>
-        <div class="floating-shape shape-three"></div>
+        <div class="floating-shape shape-one" aria-hidden="true"></div>
+        <div class="floating-shape shape-two" aria-hidden="true"></div>
+        <div class="floating-shape shape-three" aria-hidden="true"></div>
 
         <div class="container hero-content">
           <div class="hero-logo">
             <img
               src="assets/nexmar-logo.png"
-              alt="Nexmar Solutions"
+              alt="Nexmar Solutions logo"
               width="610"
               height="586"
               fetchpriority="high"
@@ -92,6 +95,7 @@
             <a
               class="button button-primary"
               href="mailto:support@nexmarsolutions.com"
+              aria-label="Start a conversation by sending email"
             >
               Start a Conversation
               <span aria-hidden="true">→</span>
@@ -103,13 +107,13 @@
           </div>
         </div>
 
-        <a class="scroll-indicator" href="#services">
+        <a class="scroll-indicator" href="#services" aria-label="Scroll down to services">
           Scroll to explore
-          <span>↓</span>
+          <span aria-hidden="true">↓</span>
         </a>
       </section>
 
-      <section class="section" id="services">
+      <section class="section" id="services" aria-label="Services offered">
         <div class="container">
           <div class="section-heading reveal">
             <p class="section-label">What we do</p>
@@ -123,9 +127,9 @@
             </p>
           </div>
 
-          <div class="services-grid">
-            <article class="service-card reveal">
-              <div class="card-icon">✦</div>
+          <div class="services-grid" role="list">
+            <article class="service-card reveal" role="listitem">
+              <div class="card-icon" aria-hidden="true">✦</div>
 
               <h3>AI & Automation</h3>
 
@@ -135,8 +139,8 @@
               </p>
             </article>
 
-            <article class="service-card reveal">
-              <div class="card-icon">&lt;/&gt;</div>
+            <article class="service-card reveal" role="listitem">
+              <div class="card-icon" aria-hidden="true">&lt;/&gt;</div>
 
               <h3>Web Development</h3>
 
@@ -146,8 +150,8 @@
               </p>
             </article>
 
-            <article class="service-card reveal">
-              <div class="card-icon">⚙</div>
+            <article class="service-card reveal" role="listitem">
+              <div class="card-icon" aria-hidden="true">⚙</div>
 
               <h3>Business Technology</h3>
 
@@ -157,8 +161,8 @@
               </p>
             </article>
 
-            <article class="service-card reveal">
-              <div class="card-icon">↗</div>
+            <article class="service-card reveal" role="listitem">
+              <div class="card-icon" aria-hidden="true">↗</div>
 
               <h3>Digital Transformation</h3>
 
@@ -171,10 +175,10 @@
         </div>
       </section>
 
-      <section class="section about-section" id="about">
+      <section class="section about-section" id="about" aria-label="About Nexmar">
         <div class="container about-grid">
           <div class="visual-panel reveal">
-            <div class="orbit orbit-outer">
+            <div class="orbit orbit-outer" aria-hidden="true">
               <div class="orbit orbit-middle">
                 <div class="orbit orbit-inner">
                   <img
@@ -200,9 +204,9 @@
               usability, and long-term value.
             </p>
 
-            <div class="benefits">
-              <article class="benefit">
-                <span class="benefit-number">01</span>
+            <div class="benefits" role="list">
+              <article class="benefit" role="listitem">
+                <span class="benefit-number" aria-hidden="true">01</span>
 
                 <div>
                   <h3>Modern</h3>
@@ -214,8 +218,8 @@
                 </div>
               </article>
 
-              <article class="benefit">
-                <span class="benefit-number">02</span>
+              <article class="benefit" role="listitem">
+                <span class="benefit-number" aria-hidden="true">02</span>
 
                 <div>
                   <h3>Practical</h3>
@@ -227,8 +231,8 @@
                 </div>
               </article>
 
-              <article class="benefit">
-                <span class="benefit-number">03</span>
+              <article class="benefit" role="listitem">
+                <span class="benefit-number" aria-hidden="true">03</span>
 
                 <div>
                   <h3>Scalable</h3>
@@ -244,7 +248,7 @@
         </div>
       </section>
 
-      <section class="section shop-section" id="shop">
+      <section class="section shop-section" id="shop" aria-label="Shop on eBay">
         <div class="container">
           <div class="contact-panel shop-panel reveal">
             <div>
@@ -263,6 +267,7 @@
               href="https://ebay.io/m/74WcvE"
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="Visit Our eBay Store (opens in new tab)"
             >
               Visit Our eBay Store
               <span aria-hidden="true">↗</span>
@@ -271,7 +276,7 @@
         </div>
       </section>
 
-      <section class="section contact-section" id="contact">
+      <section class="section contact-section" id="contact" aria-label="Contact Nexmar">
         <div class="container">
           <div class="contact-panel reveal">
             <div>
@@ -289,6 +294,7 @@
             <a
               class="button button-primary contact-button"
               href="mailto:support@nexmarsolutions.com"
+              aria-label="Send email to support at nexmarsolutions dot com"
             >
               support@nexmarsolutions.com
             </a>
@@ -297,7 +303,7 @@
       </section>
     </main>
 
-    <footer>
+    <footer role="contentinfo">
       <div class="container footer-content">
         <p>
           © <span id="current-year"></span> Nexmar Solutions. All rights
