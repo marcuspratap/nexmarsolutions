@@ -25,6 +25,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 110px;
     overflow-x: hidden;
 }
 
@@ -972,7 +973,7 @@ footer {
     border-top: 1px solid var(--border);
 }
 
-.reveal {
+.js .reveal {
     opacity: 0;
 
     transform: translateY(32px);
@@ -982,7 +983,7 @@ footer {
         transform 0.7s ease;
 }
 
-.reveal.visible {
+.js .reveal.visible {
     opacity: 1;
 
     transform: translateY(0);
@@ -1011,6 +1012,10 @@ footer {
 }
 
 @media (max-width: 980px) {
+    html {
+        scroll-padding-top: 166px;
+    }
+
     .nav-links {
         display: none;
     }
@@ -1088,6 +1093,10 @@ footer {
 }
 
 @media (max-width: 620px) {
+    html {
+        scroll-padding-top: 150px;
+    }
+
     .site-header {
         top: 10px;
     }
