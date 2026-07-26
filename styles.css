@@ -261,6 +261,7 @@ a {
 .hero {
     position: relative;
     isolation: isolate;
+    overflow: hidden;
 
     min-height: 100vh;
 
